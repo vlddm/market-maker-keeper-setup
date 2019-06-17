@@ -1,0 +1,30 @@
+[account]
+unlock = ["0xdeadbeefcafe0000000000000000000000000000"]
+password = ["/home/user/.safe/password.file"]
+keys_iterations = 10240
+
+[ipc]
+disable = false
+path = "$HOME/.local/share/io.parity.ethereum/jsonrpc.ipc"
+apis = ["web3", "eth", "pubsub", "net", "parity", "parity_pubsub", "parity_accounts", "traces", "rpc", "shh", "shh_pubsub", "personal"]
+
+[rpc]
+disable = false
+port = 8545
+interface = "local"
+cors = []
+apis = ["web3", "eth", "pubsub", "net", "parity", "parity_pubsub", "parity_accounts", "traces", "rpc", "shh", "shh_pubsub", "personal"]
+hosts = ["none"]
+
+[footprint]
+pruning = "fast"
+db_compaction = "hdd"
+cache_size = 4096
+fat_db = "off"
+tracing = "off"
+
+[snapshots]
+disable_periodic = true
+
+[network]
+warp_barrier = 7860000
