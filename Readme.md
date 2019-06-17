@@ -47,14 +47,14 @@ Running:
 ```
 bin/oasis-market-maker-keeper \
     --rpc-host 127.0.0.1 \
-    --rpc-port 8180 \
+    --rpc-port 8545 \
     --rpc-timeout 30 \
     --eth-from [address of the generated Ethereum account] \
     --tub-address 0x448a5065aebb8e423f0896e6c5d525c040f59af3 \
-    --oasis-address 0x14fbca95be7e99c15cc2996c6c9d841e54b79425 \
+    --oasis-address 0x39755357759cE0d7f32dC8dC45414CCa409AE24e \
     --price-feed eth_dai \
-    --buy-token-address [address of the quote token, could be DAI] \
-    --sell-token-address [address of the base token, could be WETH] \
+    --buy-token-address  0x89d24A6b4CcB1B6fAA2625fE562bDD9a23260359 \
+    --sell-token-address 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2 \
     --config [path to the json bands configuration file] \
     --smart-gas-price \
     --min-eth-balance 0.2
