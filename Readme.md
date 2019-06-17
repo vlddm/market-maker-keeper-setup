@@ -3,9 +3,9 @@ Ubuntu 18.04
 Fullnode setup:
 ```
 mkdir -p ~/.local/share/io.parity.ethereum/
-wget %URL% -O ~/.local/share/io.parity.ethereum/config.toml
+wget https://raw.githubusercontent.com/vlddm/market-maker-keeper-setup/master/config.toml -O ~/.local/share/io.parity.ethereum/config.toml
 mkdir -p .config/systemd/user/
-wget %URL% -O .config/systemd/user/parity.service
+wget https://raw.githubusercontent.com/vlddm/market-maker-keeper-setup/master/parity.service -O .config/systemd/user/parity.service
 
 mkdir -p ~/bin
 cd ~/bin
@@ -34,6 +34,14 @@ cd market-maker-keeper
 git submodule update --init --recursive
 ./install.sh
 ```
+
+Creating wallet:
+```
+geth attach ~/.local/share/io.parity.ethereum/jsonrpc.ipc
+personal.newAccount()
+```
+
+Put account address into config.toml ~/.local/share/io.parity.ethereum/config.toml and address into ~/.savepw file
 
 Running:
 ```
