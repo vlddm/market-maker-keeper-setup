@@ -1,9 +1,15 @@
-Ubuntu 18.04
+Ubuntu 18.04 is recommended
 
 Fullnode setup:
 ```
 mkdir -p ~/.local/share/io.parity.ethereum/
 wget https://raw.githubusercontent.com/vlddm/market-maker-keeper-setup/master/config.toml -O ~/.local/share/io.parity.ethereum/config.toml
+```
+If you have ssd storade edit downloaded config.toml to reflect that.
+Set `db_compaction="ssd"`
+
+Next:
+```
 mkdir -p .config/systemd/user/
 wget https://raw.githubusercontent.com/vlddm/market-maker-keeper-setup/master/parity.service -O .config/systemd/user/parity.service
 
@@ -18,6 +24,9 @@ systemctl --user daemon-reload
 systemctl --user enable parity.service
 systemctl --user start parity.service
 ```
+Check if node is running well: 
+`ps auxww | fgrep parity` should return process with full agruments and metadata.
+If not user `journalctl --user -u parity.service` to check logs
 
 
 Installing deps:
@@ -41,7 +50,7 @@ geth attach ~/.local/share/io.parity.ethereum/jsonrpc.ipc
 personal.newAccount()
 ```
 
-Put account address into config.toml ~/.local/share/io.parity.ethereum/config.toml and address into ~/.savepw file
+Put account address into config.toml ~/.local/share/io.parity.ethereum/config.toml and password into ~/.savepw file
 
 Running:
 ```
