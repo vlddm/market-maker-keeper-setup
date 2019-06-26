@@ -16,6 +16,7 @@ wget https://raw.githubusercontent.com/vlddm/market-maker-keeper-setup/master/pa
 mkdir -p ~/bin
 cd ~/bin
 wget https://releases.parity.io/ethereum/v2.4.7/x86_64-unknown-linux-gnu/parity
+chmod +x parity
 wget https://gethstore.blob.core.windows.net/builds/geth-linux-amd64-1.8.27-4bcc0a37.tar.gz
 tar -xf geth-linux-amd64-1.8.27-4bcc0a37.tar.gz --strip 1
 
