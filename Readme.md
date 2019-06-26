@@ -10,14 +10,14 @@ Set `db_compaction="ssd"`
 
 Next:
 ```
-mkdir -p .config/systemd/user/
-wget https://raw.githubusercontent.com/vlddm/market-maker-keeper-setup/master/parity.service -O .config/systemd/user/parity.service
+mkdir -p ~/.config/systemd/user/
+wget https://raw.githubusercontent.com/vlddm/market-maker-keeper-setup/master/parity.service -O ~/.config/systemd/user/parity.service
 
 mkdir -p ~/bin
 cd ~/bin
 wget https://releases.parity.io/ethereum/v2.4.7/x86_64-unknown-linux-gnu/parity
 wget https://gethstore.blob.core.windows.net/builds/geth-linux-amd64-1.8.27-4bcc0a37.tar.gz
-tar -xf geth-linux-amd64-1.8.27-4bcc0a37.tar.gz
+tar -xf geth-linux-amd64-1.8.27-4bcc0a37.tar.gz --strip 1
 
 sudo loginctl enable-linger $USER
 systemctl --user daemon-reload
